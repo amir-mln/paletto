@@ -1,0 +1,152 @@
+.new-palette{
+    width: 100vw; height: 100vh;
+    .side-nav{
+        display: flex;
+        flex-direction: column; 
+        align-items: center; justify-content: space-evenly;
+        position: fixed;
+        top: 0; right: 0;
+        width: 0; height: 100%;
+        border-radius: 5px;
+        z-index: 1;
+        opacity: 0;
+        transition: .5s linear;
+        &.show-side{
+            box-shadow: -10px 0px 10px 1px rgba($color: #999, $alpha: .3);
+            opacity: 1;
+            width: 350px;
+        }
+        .color-picker-container{
+            p{
+                text-transform: capitalize;
+                text-align: left;
+                font-size: 12px;
+                color: red;
+            }
+        }
+        .palette-input-container{
+            .new-palette-input{
+                position: relative;
+                border: none;
+                border-bottom: 2px solid black;
+                text-transform: uppercase;
+                background: transparent;
+                width: 200px;
+                &.red{
+                    color: red;
+                }
+            }
+            label{
+                display: block;
+                text-align: left;
+                font-size: 12px;
+                color: red;
+                text-transform: capitalize;
+            }
+        }
+        .add-button{
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 175px; height: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            &:disabled{
+                cursor: default;
+            }
+        }
+
+        
+    }
+    .new-palette-content{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-right: 0;
+        height: 100%;
+        transition: margin-right .5s linear;
+        &.show-side{
+            margin-right: 350px;
+        }
+        .new-palette-colors{
+            height: 90%;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: flex-start;
+            .new-palette-color-box{
+                height: 25%; width: 20%;
+                position: relative;
+                &:hover{
+                    svg, span{
+                        opacity: 1;
+                    }
+                }
+                svg, span{
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+                    position: absolute;
+                }
+                svg{
+                    width: 20px; height: 20px;
+                    top: 0; right: 0;
+                    cursor: pointer;
+                }
+                span{
+                    left: 5px; bottom: 5px;
+                }
+            }
+        }
+        nav, footer{
+            height: 5%;
+        }
+        nav{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .nav-container{
+                width: 85%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .home-nav-link{
+                    -webkit-text-stroke: 1px black;
+                    font-weight: bold;
+                    color: rgba($color: #999, $alpha: .3);
+                    cursor: pointer;
+                    text-transform: uppercase;
+                }
+                svg{
+                    cursor: pointer;
+                }
+            }
+        }
+        footer{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 85%;
+            span:first-of-type{
+                text-transform: capitalize;
+            }
+            .footer-buttons{
+                button{
+                    border: none;
+                    color: white;
+                    border-radius: 5px;
+                    width: 100px; height: 30px;
+                    text-transform: capitalize;
+                    cursor: pointer;
+                }
+                button:first-of-type{
+                    background-color: rgb(200, 0, 0);
+                }
+                button:last-of-type{
+                    margin-left: 10px;
+                    background-color: rgb(0, 200, 200);
+                }
+            }
+
+        }
+    }
+}

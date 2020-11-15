@@ -1,0 +1,90 @@
+.color-box{
+    position: relative;
+    
+    .color-box-overlay{
+        opacity: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.7s ease-in-out;
+        transform: scale(0.1);
+        position: absolute;
+        &.show{
+            opacity: 1;
+            z-index: 10;
+            transform: scale(10);
+        }
+    }
+    .color-box-overlay-message{
+        opacity: 0;
+        position: fixed;
+        top: 0; bottom: 0; right: 0; left: 0;
+        display: flex;
+        justify-content: center; align-items: center;
+        flex-direction: column;
+        transform: scale(0.1);
+        color: white;
+
+        &.show{
+            opacity: 1;
+            z-index: 25;
+            transform: scale(1);
+            transition: all 0.7s ease-in-out;
+            transition-delay: 0.3s;
+            h2{
+                text-transform: uppercase;
+                font-size: 4rem;
+                font-weight: 400;
+            }
+            p{
+                text-transform: uppercase;
+                font-size: 2rem;
+                font-weight: 200;
+            }
+        }
+    }
+    .color-box-content{
+        width: 100%;
+        height: 100%;
+        position: relative;        
+        &:hover{
+            .copy-svg, .more-svg{
+                opacity: 1;
+            }
+        }
+
+        .color-box-name{
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 7px;
+            left: 15px;
+        }
+
+        .copy-svg{
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            transition: ease-in .75s opacity;
+            svg{
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .more-svg{
+            position: absolute;
+            bottom: 2px;
+            right: 15px;
+            opacity: 0;
+            transition: ease-in .75s opacity;
+            svg{
+                cursor: pointer;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+.header-container{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    .logo-header{
+        font-size: 20px;
+        font-family: 'Monoton', cursive;
+        text-decoration: none;
+        color: black;
+    }
+    
+    .color-range-input{
+        margin: 0;
+        padding: 0; 
+        flex-basis: 25%;
+        height: 5px;
+        border: 1px solid black;
+        border-radius: 3px;
+        -webkit-appearance: none;  
+        appearance: none;
+        outline: none; 
+        background: linear-gradient(to right, #fffae9, #000 );
+
+        &::-webkit-slider-thumb{
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px; height: 20px;
+            background-image: url("../../Assets/icon-contrast.svg");
+            cursor: pointer;
+            border-radius: 0;
+            border: 1px solid black;
+        }
+
+        &::-moz-range-thumb{
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px; height: 20px;
+            background-image: url("../../Assets/icon-contrast.svg");
+            cursor: pointer;
+            border-radius: 0;
+            border: 1px solid black;
+        }
+    }   
+
+    .color-mode-menu{
+        text-align: left;
+        flex-basis: 10%;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+        // color: whitesmoke;
+        span{
+            border-bottom: black 2px solid;
+            padding-left: 5px;
+            line-height: 20px;
+            display: block;
+            position: relative;
+            &:after{
+                content: '\02C5';
+                position: absolute;
+                right: 5px;
+            }
+        }
+        
+        .mode-menu-drop{
+            position: absolute;
+            z-index: -5;
+            width: 100%;
+            height: 100px;
+            opacity: 0;
+            list-style: none;
+            visibility: hidden;
+            background-color: rgba($color: whitesmoke, $alpha: .8);
+            transform: translate(0,-25%);
+            transition: transform 0.6s ease-in, z-index 0.2s ease-in, opacity .6s ease-in ;
+            color: black;
+            li{
+                height: 33%;
+                padding-left: 5px;
+                display: flex;
+                align-items: center;
+                &:hover, &:focus{
+                    background-color: whitesmoke;
+                }
+            }
+        }
+
+        &:hover .mode-menu-drop{
+            z-index: 5;
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0,0);
+        }
+    }
+}

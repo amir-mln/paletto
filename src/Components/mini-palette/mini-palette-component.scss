@@ -1,0 +1,38 @@
+.mini-palette{
+    height: 150px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .3);
+    .mini-palette-container{
+        width: 95%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-evenly;
+        .mini-palette-colors{
+            height: 78%;
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            border: 2px black solid;
+            border-radius: 3px;
+            overflow: hidden;
+            .mini-palette-color{
+                width: 20%; height: 25%;
+            }
+        }
+        .mini-palette-footer{
+            height: 12%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            .palette-link{
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+
+}
